@@ -1,0 +1,12 @@
+version: '1'
+services:
+  mysql:
+    container_name: mysql_db
+    image: mysql:8.0
+    volumes:
+      - ./sql-data/db:/var/lib/mysql
+    ports:
+      - "30306:3306"
+    hostname: localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secret'
